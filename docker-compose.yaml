@@ -9,7 +9,7 @@ services:
       - redis
       - evolution-postgres
     ports:
-      - 8087:8087
+      - 8080:8087
     volumes:
       - evolution_instances:/evolution/instances
     networks:
@@ -60,9 +60,9 @@ services:
       - -c
       - listen_addresses=*
     environment:
-      - POSTGRES_DB=${POSTGRES_DATABASE}
-      - POSTGRES_USER=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=evolution
+      - POSTGRES_USER=evolution
+      - POSTGRES_PASSWORD=evolution
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
